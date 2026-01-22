@@ -170,4 +170,66 @@
   .animate-pulse-glow {
     animation: pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
+
+  /* Анимация махания рукой - плавная версия */
+  @keyframes wave {
+    0%, 100% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(12deg);
+    }
+    50% {
+      transform: rotate(0deg);
+    }
+    75% {
+      transform: rotate(-12deg);
+    }
+  }
+
+  .animate-wave {
+    animation: wave 1.2s ease-in-out infinite;
+    transform-origin: center center;
+    will-change: transform;
+  }
+
+  /* Анимация приветствия при загрузке - упрощенная */
+  @keyframes welcome-wave {
+    0%, 100% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(10deg);
+    }
+    50% {
+      transform: rotate(0deg);
+    }
+    75% {
+      transform: rotate(-10deg);
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .animate-welcome {
+      animation: welcome-wave 1.5s ease-in-out 0.3s 3;
+      transform-origin: center center;
+      will-change: transform;
+    }
+  }
+
+  /* Медленное вращение */
+  @keyframes spin-slow {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .animate-spin-slow {
+    animation: spin-slow 0.8s ease-in-out;
+    transform-origin: center center;
+    will-change: transform;
+  }
 }

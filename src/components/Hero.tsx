@@ -2,6 +2,7 @@ import { resume } from '@/resumeData'
 import { Card, CardContent } from '@/components/ui/card'
 import { Mail, MessageCircle, Github, Globe } from 'lucide-react'
 import { SectionWrapper } from './SectionWrapper'
+import { PhotoWithWave } from './PhotoWithWave'
 
 export function Hero() {
   const contacts = [
@@ -70,32 +71,44 @@ export function Hero() {
           </CardContent>
         </Card>
 
-        <Card className="border-2 hover:shadow-lg transition-all duration-300">
-          <CardContent className="p-6" aria-label="Контакты (кратко)">
-            <div className="space-y-3">
-              {contacts.map((contact) => {
-                const Icon = contact.icon
-                return (
-                  <a
-                    key={contact.label}
-                    href={contact.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="group flex items-center gap-3 rounded-lg border p-3 transition-all duration-200 hover:bg-accent hover:border-primary/50 hover:shadow-md hover:-translate-y-0.5"
-                  >
-                    <div className="p-1.5 rounded-md bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                      <Icon className="h-4 w-4 text-primary" />
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <div className="text-xs text-muted-foreground">{contact.label}</div>
-                      <div className="font-semibold text-sm truncate">{contact.value}</div>
-                    </div>
-                  </a>
-                )
-              })}
-            </div>
-          </CardContent>
-        </Card>
+        <div className="flex flex-col gap-6">
+          {/* Фото с анимацией */}
+          {resume.photo && (
+            <Card className="border-2 hover:shadow-lg transition-all duration-300 flex items-center justify-center p-6">
+              <CardContent className="p-0">
+                <PhotoWithWave photo={resume.photo} name={resume.name} />
+              </CardContent>
+            </Card>
+          )}
+
+          {/* Контакты */}
+          <Card className="border-2 hover:shadow-lg transition-all duration-300">
+            <CardContent className="p-6" aria-label="Контакты (кратко)">
+              <div className="space-y-3">
+                {contacts.map((contact) => {
+                  const Icon = contact.icon
+                  return (
+                    <a
+                      key={contact.label}
+                      href={contact.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="group flex items-center gap-3 rounded-lg border p-3 transition-all duration-200 hover:bg-accent hover:border-primary/50 hover:shadow-md hover:-translate-y-0.5"
+                    >
+                      <div className="p-1.5 rounded-md bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                        <Icon className="h-4 w-4 text-primary" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="text-xs text-muted-foreground">{contact.label}</div>
+                        <div className="font-semibold text-sm truncate">{contact.value}</div>
+                      </div>
+                    </a>
+                  )
+                })}
+              </div>
+            </CardContent>
+          </Card>
+        </div>
       </div>
       </SectionWrapper>
     </section>

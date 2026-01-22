@@ -2,6 +2,7 @@ export type Resume = {
   name: string
   role: string
   location: string
+  photo?: string
   contacts: {
     email: string
     phone?: string
@@ -60,6 +61,7 @@ export const resume: Resume = {
   name: 'Адис Ходжаяров',
   role: 'Frontend / Fullstack Developer',
   location: 'Москва, Россия',
+  photo: '/photo.jpg', // Поместите ваше фото в public/photo.jpg
   contacts: {
     email: 'khodzhayarov.a@gmail.com',
     phone: '+7 (932) 054-12-08',
