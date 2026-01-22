@@ -30,12 +30,13 @@ export function Projects() {
           </div>
           <div className="grid gap-4 md:grid-cols-2">
             {resume.projects.map((project, idx) => (
-              <Card
-                key={project.title}
-                className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 hover:border-primary/50"
-                style={{ animationDelay: `${idx * 100}ms` }}
-              >
-                <CardContent className="p-6">
+            <Card
+              key={project.title}
+              className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 relative overflow-hidden"
+              style={{ animationDelay: `${idx * 100}ms` }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <CardContent className="p-6 relative">
                   <div className="flex items-start justify-between gap-4">
                     <div className="flex-1">
                       <h3 className="text-lg font-semibold group-hover:text-primary transition-colors">

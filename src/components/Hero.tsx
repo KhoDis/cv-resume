@@ -41,11 +41,12 @@ export function Hero() {
     <section className="py-12 md:py-20" aria-label="Вступление">
       <SectionWrapper>
         <div className="grid gap-6 md:grid-cols-[1fr_300px]">
-        <Card className="border-2 hover:shadow-lg transition-all duration-300 hover:border-primary/50 group">
-          <CardContent className="p-6 md:p-8">
+        <Card className="border-2 hover:shadow-xl transition-all duration-300 hover:border-primary/50 group relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          <CardContent className="p-6 md:p-8 relative">
             <div className="relative">
-              <div className="absolute -top-2 -left-2 w-24 h-24 bg-primary/10 rounded-full blur-2xl group-hover:bg-primary/20 transition-colors" />
-              <h1 className="relative text-4xl font-bold tracking-tight md:text-5xl bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text">
+              <div className="absolute -top-2 -left-2 w-24 h-24 bg-primary/10 rounded-full blur-2xl group-hover:bg-primary/20 group-hover:scale-150 transition-all duration-500" />
+              <h1 className="relative text-4xl font-bold tracking-tight md:text-5xl bg-gradient-to-r from-foreground via-foreground to-foreground/70 bg-clip-text group-hover:from-primary group-hover:via-primary/80 group-hover:to-foreground transition-all duration-300">
                 {resume.role}
                 <br />
                 <span className="text-muted-foreground font-semibold">{resume.location}</span>

@@ -19,6 +19,12 @@ export function Header({ theme, onThemeChange }: HeaderProps) {
 
         <nav className="flex items-center gap-2 flex-wrap" aria-label="Навигация">
           <a
+            href="#stats"
+            className="text-sm font-medium transition-all duration-200 hover:text-primary hover:scale-105 px-2 py-1 rounded-md hover:bg-accent/50"
+          >
+            Статистика
+          </a>
+          <a
             href="#skills"
             className="text-sm font-medium transition-all duration-200 hover:text-primary hover:scale-105 px-2 py-1 rounded-md hover:bg-accent/50"
           >

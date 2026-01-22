@@ -40,8 +40,9 @@ export function Experience() {
                   {/* Timeline dot */}
                   <div className="absolute left-6 top-6 w-4 h-4 rounded-full bg-primary border-4 border-background hidden md:block z-10" />
 
-                  <Card className="md:ml-16 hover:shadow-lg transition-all duration-300 hover:border-primary/50 group">
-                    <CardContent className="p-6">
+                  <Card className="md:ml-16 hover:shadow-xl transition-all duration-300 hover:border-primary/50 group relative overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    <CardContent className="p-6 relative">
                       <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2">
                         <div className="flex-1">
                           <h3 className="text-lg font-semibold group-hover:text-primary transition-colors">
