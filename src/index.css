@@ -92,6 +92,10 @@
     color-scheme: dark;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   * {
     @apply border-border;
     box-sizing: border-box;

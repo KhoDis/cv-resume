@@ -17,40 +17,40 @@ export function Header({ theme, onThemeChange }: HeaderProps) {
           <span className="text-sm text-muted-foreground">{resume.role}</span>
         </div>
 
-        <nav className="flex items-center gap-3 flex-wrap" aria-label="Навигация">
+        <nav className="flex items-center gap-2 flex-wrap" aria-label="Навигация">
           <a
             href="#skills"
-            className="text-sm font-medium transition-colors hover:text-primary"
+            className="text-sm font-medium transition-all duration-200 hover:text-primary hover:scale-105 px-2 py-1 rounded-md hover:bg-accent/50"
           >
             Навыки
           </a>
           <a
             href="#projects"
-            className="text-sm font-medium transition-colors hover:text-primary"
+            className="text-sm font-medium transition-all duration-200 hover:text-primary hover:scale-105 px-2 py-1 rounded-md hover:bg-accent/50"
           >
             Проекты
           </a>
           <a
             href="#experience"
-            className="text-sm font-medium transition-colors hover:text-primary"
+            className="text-sm font-medium transition-all duration-200 hover:text-primary hover:scale-105 px-2 py-1 rounded-md hover:bg-accent/50"
           >
             Опыт
           </a>
           <a
             href="#education"
-            className="text-sm font-medium transition-colors hover:text-primary"
+            className="text-sm font-medium transition-all duration-200 hover:text-primary hover:scale-105 px-2 py-1 rounded-md hover:bg-accent/50"
           >
             Образование
           </a>
           <a
             href="#achievements"
-            className="text-sm font-medium transition-colors hover:text-primary"
+            className="text-sm font-medium transition-all duration-200 hover:text-primary hover:scale-105 px-2 py-1 rounded-md hover:bg-accent/50"
           >
             Достижения
           </a>
           <a
             href="#contacts"
-            className="text-sm font-medium transition-colors hover:text-primary"
+            className="text-sm font-medium transition-all duration-200 hover:text-primary hover:scale-105 px-2 py-1 rounded-md hover:bg-accent/50"
           >
             Контакты
           </a>

@@ -1,43 +1,63 @@
 import { resume } from '@/resumeData'
 import { Card, CardContent } from '@/components/ui/card'
-import { ExternalLink } from 'lucide-react'
+import { ExternalLink, Code2 } from 'lucide-react'
+import { SectionWrapper } from './SectionWrapper'
 
 export function Projects() {
   return (
     <section id="projects" className="py-12" aria-label="Проекты">
-      <div className="mb-8">
-        <h2 className="text-3xl font-bold tracking-tight">Проекты</h2>
-        <p className="mt-2 text-muted-foreground">
-          Лучше 2–4 сильных, чем 10 "для галочки"
-        </p>
-      </div>
-      <div className="grid gap-4 md:grid-cols-2">
-        {resume.projects.map((project) => (
-          <Card key={project.title}>
-            <CardContent className="p-6">
-              <div className="flex items-start justify-between gap-4">
-                <div className="flex-1">
-                  <h3 className="text-lg font-semibold">{project.title}</h3>
-                  <p className="mt-1 text-sm text-muted-foreground">
-                    {project.stack.join(' · ')}
-                  </p>
+      <SectionWrapper>
+        <div className="mb-8">
+          <div className="flex items-center gap-3 mb-2">
+            <Code2 className="h-8 w-8 text-primary" />
+            <h2 className="text-3xl font-bold tracking-tight">Проекты</h2>
+          </div>
+          <p className="mt-2 text-muted-foreground">
+            Лучше 2–4 сильных, чем 10 "для галочки"
+          </p>
+        </div>
+        <div className="grid gap-4 md:grid-cols-2">
+          {resume.projects.map((project, idx) => (
+            <Card
+              key={project.title}
+              className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 hover:border-primary/50"
+              style={{ animationDelay: `${idx * 100}ms` }}
+            >
+              <CardContent className="p-6">
+                <div className="flex items-start justify-between gap-4">
+                  <div className="flex-1">
+                    <h3 className="text-lg font-semibold group-hover:text-primary transition-colors">
+                      {project.title}
+                    </h3>
+                    <div className="mt-2 flex flex-wrap gap-1.5">
+                      {project.stack.map((tech) => (
+                        <span
+                          key={tech}
+                          className="inline-flex items-center rounded-md bg-secondary/50 px-2 py-0.5 text-xs font-medium border"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <p className="mt-4 text-sm">{project.description}</p>
-              {project.link && (
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline"
-                >
-                  Открыть <ExternalLink className="h-4 w-4" />
-                </a>
-              )}
-            </CardContent>
-          </Card>
-        ))}
-      </div>
+                <p className="mt-4 text-sm leading-relaxed">{project.description}</p>
+                {project.link && (
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-primary hover:gap-3 transition-all group/link"
+                  >
+                    Открыть{' '}
+                    <ExternalLink className="h-4 w-4 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
+                  </a>
+                )}
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </SectionWrapper>
     </section>
   )
 }
